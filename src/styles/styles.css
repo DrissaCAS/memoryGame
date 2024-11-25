@@ -1,54 +1,75 @@
-body{
-    display: flex;
+body {
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: #fc1e8a;
+    min-height: 100vh; */
+    background-image: url(../img/bg.png);
+    /* background-color: #fc1e8a; */
     user-select: none;
 }
 
+/* Header */
+header {
+    display: flex;
+    height: 100%;
+}
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    height: 80px;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    border-bottom: 5px solid #ffffff;
+}
+.menu-score,
+.menu-lives{
+    font-size: 12px;
+    display: flex;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main */
+main {
+    margin: auto;
+    width: 550px;
+}
 .container {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    background: linear-gradient(
-        325deg,
-        #03001e 0%,
-        #7303c0 30%,
-        #ec38bc 70%,
-        #fdeff9 100%
-    );
-    padding: 40px 60px;
+    gap: 20px;
+    background: #ffe346;
+    padding: 30px 50px;
 }
-
 h2 {
-    font-size: 3em;
+    font-size: 2em;
+    letter-spacing: 0.1em;
     color: #ffffff;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
 }
-
 .reset {
     padding: 15px 30px;
     width: 100%;
-    color: #000000;
+    color: #8d3011;
     background-color: #ffffff;
     border: none;
-    font-size: 1.5em;
+    font-size: 1.0em;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 600;
 }
-
 .reset:focus {
-    color: #fc1e8a;
-    background-color: #bb8cdb;
+    color: #ffd700;
+    background-color: #8d3011;
 }
-
 .game {
     /* border: 1px solid black; */
     width: 430px;
@@ -59,7 +80,6 @@ h2 {
     transform-style: preserve-3d;
     perspective: 500px;
 }
-
 .item {
     position: relative;
     width: 100px;
@@ -72,22 +92,31 @@ h2 {
     transform: rotateY(180deg);
     transition: 0.25s;
 }
-
 .item::after {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: #404040;
+    background: url("../img/Block.png");
+    /* background-color: #8d3011; */
     transition: 0.25s;
-    transform: rotateY(0deg);
+    /* transform: rotateY(0deg); */
+    transform: rotate(0deg);
     backface-visibility: hidden;
 }
-
 .item.boxOpen{
     transform: rotateY(0deg);
 }
-
 .boxOpen::after,
 .boxMatch::after{
     transform: rotateY(180deg);
+}
+
+/* Footer */
+.footer-name {
+    font-size: 15px;
+    color: #ffffff;
+    margin: 25px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

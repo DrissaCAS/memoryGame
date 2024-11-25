@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
     <title>Memory Game</title>
 
+    <!-- Styles -->
     <link rel="stylesheet" href="/src/styles/reset.css">
     <link rel="stylesheet" href="/src/styles/styles.css">
 
 </head>
 <body>
-    <div class="container">
-        <h2>MEMORY GAME</h2>
-        <div class="game"></div>
-        <button class="reset" onclick="window.location.reload()">RESET GAME</button>
-    </div>
+    <header>
+        <div class="menu">
+            <div class="menu-score">
+                <h3 class="yourScore">Your Score</h3>
+                <h3 id="score">0</h3>
+            </div>
 
+            <div class="menu-title">
+                <h2>MEMORY GAME</h2>
+            </div>
+            
+            <div class="menu-lives">
+                <img src="./src/img/mushroom.png" alt="mushroom" height="35px">
+                <h2>x5</h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="game"></div>
+            <button class="reset" onclick="window.location.reload()">RESET GAME</button>
+        </div>
+    </main>
+
+    <footer>
+        <h2 class="footer-name"> By Drissa CAS </h2>
+    </footer>
+
+    <!-- Scripts -->
     <script src="./src/scripts/engine.js" defer></script>
 </body>
 </html>
