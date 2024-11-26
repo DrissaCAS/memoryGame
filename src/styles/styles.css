@@ -1,10 +1,10 @@
 body {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; */
-    background-image: url(../img/bg.png);
-    /* background-color: #fc1e8a; */
+    background-image: url(../img/BG.jpg);
+    background-size: 100%;
+    background-color: #000000;
+    /* background-position: 0px 50px; */
+    /* background-repeat: no-repeat; */
+    /* background-size: auto; */
     user-select: none;
 }
 
@@ -25,7 +25,8 @@ header {
     border-bottom: 5px solid #ffffff;
 }
 .menu-score,
-.menu-lives{
+.menu-lives,
+.menu-time {
     font-size: 12px;
     display: flex;
     width: 100px;
@@ -45,7 +46,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background: #ffe346;
+    background: #ffd900;
     padding: 30px 50px;
 }
 h2 {
