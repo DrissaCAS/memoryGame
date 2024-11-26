@@ -1,8 +1,6 @@
 body {
     background-image: url(../img/BG.png);
-    /* background-size: 100%; */
-    /* background-color: #000000; */
-    background-position: 0px -10px;
+    background-position: auto;
     background-repeat: no-repeat;
     background-size: 100%;
     user-select: none;
@@ -32,6 +30,10 @@ header {
     width: 100px;
     align-items: center;
     justify-content: center;
+}
+#lives,
+#score {
+    padding: 15px;
 }
 
 /* Main */
