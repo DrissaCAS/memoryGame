@@ -1,10 +1,10 @@
 body {
-    background-image: url(../img/BG.jpg);
+    background-image: url(../img/BG.png);
+    /* background-size: 100%; */
+    /* background-color: #000000; */
+    background-position: 0px -10px;
+    background-repeat: no-repeat;
     background-size: 100%;
-    background-color: #000000;
-    /* background-position: 0px 50px; */
-    /* background-repeat: no-repeat; */
-    /* background-size: auto; */
     user-select: none;
 }
 
@@ -37,7 +37,7 @@ header {
 /* Main */
 main {
     margin: auto;
-    width: 550px;
+    width: 500px;
 }
 .container {
     position: relative;
@@ -47,7 +47,7 @@ main {
     align-items: center;
     gap: 20px;
     background: #ffd900;
-    padding: 30px 50px;
+    padding: 30px 40px;
 }
 h2 {
     font-size: 2em;
@@ -116,7 +116,7 @@ h2 {
 .footer-name {
     font-size: 15px;
     color: #ffffff;
-    margin: 25px auto;
+    margin: 15px auto;
     display: flex;
     align-items: center;
     justify-content: center;
