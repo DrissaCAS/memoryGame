@@ -55,7 +55,6 @@ for(let i = 0; i < emojis.length; i++) {
     document.querySelector(".game").appendChild(box);
 }
 
-
 // FUNÇÃO PARA OS ÁUDIOS
 function playSound(audioName) {
     let audio = new Audio(`./src/audios/${audioName}.m4a`);
@@ -74,7 +73,7 @@ function clearTime() {
 function messageGameOver() {
     let over = document.createElement("div");
     over.id = "modal";
-    over.innerHTML = "Game Over! Você acertou " + state.value.result + " pares.";
+    over.innerHTML = "Game Over! Você acertou " + state.value.result + " par(es).";
     document.querySelector(".container").appendChild(over);
 }
 
@@ -82,7 +81,7 @@ function messageGameOver() {
 function messageVictory() {
     let victory = document.createElement("div");
     victory.id = "modal";
-    victory.innerHTML = "Parabéns! Você acertou todos os par(es).";
+    victory.innerHTML = "Parabéns! Você acertou todos os pares.";
     document.querySelector(".container").appendChild(victory);
 }
 
