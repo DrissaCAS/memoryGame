@@ -25,7 +25,7 @@ const state = {
     value:{
         // contLife: 5,
         result: 0,
-        curretTime: 15,
+        curretTime: 20,
     },
     actions:{
         timeId: setInterval(checkMatch, 1000),
@@ -43,9 +43,15 @@ let shuffleEmojis = emojis.sort(() => (Math.random() > 0.5 ? 2 : -1));
 
 for(let i = 0; i < emojis.length; i++) {
     let box = document.createElement("div");
+    let boxId = document.createAttribute('id');
+
+    boxId.value = i;
+    box.setAttributeNode(boxId);
+
     box.className = "item";
     box.innerHTML = shuffleEmojis[i];
     box.onclick = handleClick;
+
     document.querySelector(".game").appendChild(box);
 }
 
@@ -53,8 +59,31 @@ for(let i = 0; i < emojis.length; i++) {
 // FUNÇÃO PARA OS ÁUDIOS
 function playSound(audioName) {
     let audio = new Audio(`./src/audios/${audioName}.m4a`);
-    audio.volume = 0.2;
+    audio.volume = 0.4;
     audio.play();
+}
+
+// FUNÇÃO PARA LIMPAR DADOS
+function clearTime() {
+    clearInterval(state.actions.countDownTimerId);
+    clearInterval(state.actions.timeId);
+    clearInterval(state.value.result);
+}
+
+// FUNÇÃO PARA MENSAGEM GAME OVER
+function messageGameOver() {
+    let over = document.createElement("div");
+    over.id = "modal";
+    over.innerHTML = "Game Over! Você acertou " + state.value.result + " pares.";
+    document.querySelector(".container").appendChild(over);
+}
+
+// FUNÇÃO PARA MENSAGEM DE VITÓRIA
+function messageVictory() {
+    let victory = document.createElement("div");
+    victory.id = "modal";
+    victory.innerHTML = "Parabéns! Você acertou todos os par(es).";
+    document.querySelector(".container").appendChild(victory);
 }
 
 // FUNÇÃO PARA GUARDAR INFORMAÇÃO DA CARTA VIRADA
@@ -77,26 +106,22 @@ function countDown(){
     if(state.value.curretTime <= 0){
         playSound("game-over");
         
-        alert("Game Over! Você acertou " + state.value.result + " pares.");
-        
-        clearInterval(state.actions.countDownTimerId);
-        clearInterval(state.actions.timeId);
-        clearInterval(state.value.result);
+        messageGameOver();
+
+        clearTime();
     } else if(document.querySelectorAll(".boxMatch").length === emojis.length) {
         playSound("game");
         
-        alert("Parabéns! Você acertou todos os pares.");
+        messageVictory();
         
-        clearInterval(state.actions.countDownTimerId);
-        clearInterval(state.actions.timeId);
-        clearInterval(state.value.result);
+        clearTime();
     }
 }
 
 // FUNÇÃO PARA COMPARAR SE OS PARES CORRESPONDEM
 function checkMatch() {
     
-    if(openCards[0].innerHTML === openCards[1].innerHTML) {
+    if(openCards[0].innerHTML === openCards[1].innerHTML && openCards[0].id !== openCards[1].id) {
         playSound("hit");
 
         openCards[0].classList.add("boxMatch");
@@ -113,4 +138,6 @@ function checkMatch() {
     }
     
     openCards = [];
+
+    
 }

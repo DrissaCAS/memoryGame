@@ -25,6 +25,7 @@ header {
 .menu-score,
 .menu-time {
     font-size: 12px;
+    line-height: 1.2rem;
     display: flex;
     width: 100px;
     align-items: center;
@@ -122,3 +123,24 @@ h2 {
     align-items: center;
     justify-content: center;
 }
+
+#modal {
+    position: fixed;
+    background-color: #8d3011;
+    font-size: 3em;
+    text-align: center;
+    line-height: 5rem;
+    color: #ffd700;
+    animation: zoom 0.5s forwards;
+    border-radius: 1rem;
+    padding: 3rem;
+  }
+  
+  @keyframes zoom {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(0.5);
+    }
+  }
