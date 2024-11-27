@@ -23,7 +23,6 @@ header {
     border-bottom: 5px solid #ffffff;
 }
 .menu-score,
-.menu-lives,
 .menu-time {
     font-size: 12px;
     display: flex;
@@ -31,7 +30,7 @@ header {
     align-items: center;
     justify-content: center;
 }
-#lives,
+#lifes,
 #score {
     padding: 15px;
 }

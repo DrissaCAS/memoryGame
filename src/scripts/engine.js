@@ -18,15 +18,18 @@ const emojis = [
 ];
 const state = {
     view:{
+        // lifeLeft: document.querySelector("#lives"),
         timeLeft: document.querySelector("#time-left"),
         score: document.querySelector("#score"),
     },
     value:{
+        // contLife: 5,
         result: 0,
         curretTime: 15,
     },
     actions:{
         timeId: setInterval(checkMatch, 1000),
+        // lifeId: setInterval(checkMatch, 1000),
         countDownTimerId: setInterval(countDown, 1000),
     }
 }
@@ -104,6 +107,9 @@ function checkMatch() {
     } else {
         openCards[0].classList.remove("boxOpen");
         openCards[1].classList.remove("boxOpen");
+        
+        // state.value.contLife--;
+        // state.view.lifeLeft.textContent = state.value.contLife;
     }
     
     openCards = [];
